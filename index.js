@@ -79,21 +79,21 @@ search.addEventListener('click', async () => {
         const sunrise = q('.weather-details .sunrise .text .info-sunrise span');
         const sunset = q('.weather-details .sunset .text .info-sunset span');
 
-        // Mapping weather conditions to images
-        const weatherImages = {
-            Clear: 'images/clear.png',
-            Rain: 'images/rain.png',
-            Clouds: 'images/cloud.png',
-            Snow: 'images/snow.png',
-            Mist: 'images/mist.png',
-            Haze: 'images/mist.png',
-            Drizzle: 'images/rain.png',
-            Thunderstorm: 'images/thunderstorm.png'
+        // Mapping weather conditions to files
+        const weatherfiles = {
+            Clear: 'files/clear.png',
+            Rain: 'files/rain.png',
+            Clouds: 'files/cloud.png',
+            Snow: 'files/snow.png',
+            Mist: 'files/mist.png',
+            Haze: 'files/mist.png',
+            Drizzle: 'files/rain.png',
+            Thunderstorm: 'files/thunderstorm.png'
         };
 
         if (json.weather && json.weather[0]) {
             const weatherMain = json.weather[0].main;
-            image.src = weatherImages[weatherMain] || 'images/cloud.png'; // Fallback image
+            image.src = weatherfiles[weatherMain] || 'files/cloud.png'; // Fallback image
             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
             description.innerHTML = `${json.weather[0].description}`;
             humidity.innerHTML = `${json.main.humidity}%`;
